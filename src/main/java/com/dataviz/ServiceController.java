@@ -40,10 +40,19 @@ public class ServiceController {
         if(Integer.valueOf(columnIndex)>-1){
             params.put("column_index", columnIndex);
         }
-        String url = String.format(quandlTemplate, databaseCode, datasetCode) ;
-        String result = null;
+        String url = String.format(quandlTemplate, databaseCode, datasetCode);
+		boolean q = true;
+		for( String key : params.keySet() ){
+			if (q){
+				q = false;
+				url += '?';
+			} else
+				url += '&';
+			url += key + '=' + params.get(key);
+        }
+		String result = null;
         try {
-            result = restTemplate.getForObject(url, String.class, params);
+            result = restTemplate.getForObject(url, String.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
