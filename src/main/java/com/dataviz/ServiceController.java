@@ -15,7 +15,6 @@ public class ServiceController {
 
     @RequestMapping(value="/services/dummyRequest", method = RequestMethod.GET, produces = "application/json")
      public @ResponseBody String success(
-   /* public ModelAndView success( */
         @RequestParam(name="database_code", required=true) String databaseCode,
         @RequestParam(name="dataset_code", required=true) String datasetCode,
         @RequestParam(name="start_date", required=true) String startDate,
@@ -57,6 +56,5 @@ public class ServiceController {
             e.printStackTrace();
         }
         return result;
-        /*return new ModelAndView("test");*/
     }
 }
