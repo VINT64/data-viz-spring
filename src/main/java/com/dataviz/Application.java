@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.*;
 
 @SpringBootApplication
-public class DemoApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Bean
